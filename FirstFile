@@ -1,0 +1,17 @@
+import xlsxwriter
+ 
+line_data = [
+              ['000001    ', 'Emitido', '-']
+              ['000002    ', '-', 'VALOR 03']
+              ['000003    ', '-', 'VALOR 03']
+            ]
+ 
+# exportando para excel
+workbook  = xlsxwriter.Workbook('filename.xlsx')
+worksheet = workbook.add_worksheet()
+print(line_data)
+for  line in range(0, len(line_data)):
+    for column in range(0, len(line_data)):
+        worksheet.write(column, line, line_data[line])
+ 
+workbook.close() 
